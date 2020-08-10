@@ -59,57 +59,57 @@ public class Solution
     //     return intMaxLength;
     // }
 
-    public int LengthOfLongestSubstring(string s)
-    {
-        if (string.IsNullOrEmpty(s))
-        {
-            return 0;
-        }
-        int max = 1;
-        Queue<char> que = new Queue<char>();
-        foreach (var c in s)
-        {
-            while (que.Contains(c))
-            {
-                que.Dequeue();
-            }
-            que.Enqueue(c);
-            max = que.Count > max ? que.Count : max;
-        }
-
-        return max;
-    }
-
     // public int LengthOfLongestSubstring(string s)
     // {
     //     if (string.IsNullOrEmpty(s))
     //     {
     //         return 0;
     //     }
-    //     var max = 1;
-    //     for (int i = 0; i < s.Length; i++)
+    //     int max = 1;
+    //     Queue<char> que = new Queue<char>();
+    //     foreach (var c in s)
     //     {
-    //         for (int j = 1; j < s.Length - i; j++)
+    //         while (que.Contains(c))
     //         {
-    //             if (s.Substring(i, j).IndexOf(s[i + j]) > -1)
-    //             {
-    //                 if (j > max)
-    //                 {
-    //                     max = j;
-    //                 }
-    //                 break;
-    //             }
-    //             else
-    //             {
-    //                 if (j + 1 > max)
-    //                 {
-    //                     max = j + 1;
-    //                 }
-    //             }
+    //             que.Dequeue();
     //         }
+    //         que.Enqueue(c);
+    //         max = que.Count > max ? que.Count : max;
     //     }
+
     //     return max;
     // }
+
+    public int LengthOfLongestSubstring(string s)
+    {
+        if (string.IsNullOrEmpty(s))
+        {
+            return 0;
+        }
+        var max = 1;
+        for (int i = 0; i < s.Length; i++)
+        {
+            for (int j = 1; j < s.Length - i; j++)
+            {
+                if (s.Substring(i, j).IndexOf(s[i + j]) > -1)
+                {
+                    if (j > max)
+                    {
+                        max = j;
+                    }
+                    break;
+                }
+                else
+                {
+                    if (j + 1 > max)
+                    {
+                        max = j + 1;
+                    }
+                }
+            }
+        }
+        return max;
+    }
 
 }
 // @lc code=end
