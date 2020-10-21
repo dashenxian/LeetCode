@@ -57,17 +57,86 @@
 // @lc code=start
 public class Solution
 {
-    public int Fib(int N)
+    public int Fib1(int N)
     {
-        if(N<=0){
+        if (N < 1)
+        {
+            return 0;
+        }
+
+        if (N < 3)
+        {
+            return 1;
+        }
+
+        var pre = 1;
+        var cur = 1;
+        for (int i = 3; i <= N; i++)
+        {
+            var sum = pre + cur;
+            pre = cur;
+            cur = sum;
+        }
+
+        return cur;
+    }
+    public int Fib4(int N)
+    {
+        if (N < 1)
+        {
             return 0;
         }
         if (N < 3)
         {
             return 1;
         }
-        return Fib(N - 1) + Fib(N - 2);
+        var dic = new int[N + 1];
+        dic[1] = 1;
+        dic[2] = 1;
+        for (int i = 3; i <= N; i++)
+        {
+            dic[i] = dic[i - 1] + dic[i - 2];
+        }
+
+        return dic[N];
     }
+    // public int Fib2(int N)
+    // {
+    //     if (N < 1)
+    //     {
+    //         return 0;
+    //     }
+    //     var map = new int[N + 1];
+    //     return DicFib(map, N);
+    // }
+
+    // private int DicFib(int[] map, int n)
+    // {
+    //     if (n < 3)
+    //     {
+    //         return 1;
+    //     }
+
+    //     if (map[n] != 0)
+    //     {
+    //         return map[n];
+    //     }
+
+    //     map[n] = DicFib(map, n - 1) + DicFib(map, n - 2);
+    //     return map[n];
+    // }
+    // public int Fib3(int N)
+    // {
+    //     if (N <= 0)
+    //     {
+    //         return 0;
+    //     }
+    //     if (N < 3)
+    //     {
+    //         return 1;
+    //     }
+    //     return Fib(N - 1) + Fib(N - 2);
+    // }
 }
 // @lc code=end
 
