@@ -3,7 +3,7 @@
  *
  * [21] 合并两个有序链表
  */
-
+namespace Namespace21;
 // @lc code=start
 /**
  * Definition for singly-linked list.
@@ -91,4 +91,13 @@ public class Solution
     }
 }
 // @lc code=end
-
+public class ListNode
+{
+    public int val;
+    public ListNode next;
+    public ListNode(int val = 0, ListNode next = null)
+    {
+        this.val = val;
+        this.next = next;
+    }
+}

@@ -3,7 +3,7 @@
  *
  * [1] 两数之和
  */
-
+namespace Namespace1;
 // @lc code=start
 public class Solution
 {

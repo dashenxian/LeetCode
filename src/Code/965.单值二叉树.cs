@@ -45,7 +45,7 @@
  * 
  * 
  */
-
+namespace Namespace965;
 // @lc code=start
 /**
  * Definition for a binary tree node.
@@ -76,6 +76,13 @@ public class Solution
 
         return IsUnivalTree(node.left, value) && IsUnivalTree(node.right, value);
     }
+}
+public class TreeNode
+{
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
+    public TreeNode(int x) { val = x; }
 }
 // @lc code=end
 

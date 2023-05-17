@@ -48,7 +48,7 @@
  * 
  * 
  */
-
+namespace Namespace877;
 // @lc code=start
 public class Solution {
     public bool StoneGame(int[] piles) {

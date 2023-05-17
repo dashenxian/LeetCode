@@ -41,7 +41,7 @@
  * 
  * 
  */
-
+namespace Namespace938;
 // @lc code=start
 /**
  * Definition for a binary tree node.
@@ -72,3 +72,10 @@ public class Solution
 }
 // @lc code=end
 
+public class TreeNode
+{
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
+    public TreeNode(int x) { val = x; }
+}

@@ -29,7 +29,7 @@
  * 
  * 
  */
-
+namespace Namespace5;
 // @lc code=start
 using System;
 public class Solution

@@ -73,11 +73,12 @@
  * 
  * 
  */
-
+namespace Namespace1510;
 // @lc code=start
 public class Solution {
-    public bool WinnerSquareGame(int n) {
-
+    public bool WinnerSquareGame(int n)
+    {
+        throw new NotImplementedException();
     }
 }
 // @lc code=end

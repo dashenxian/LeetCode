@@ -51,7 +51,7 @@
  * 
  * 
  */
-
+namespace Namespace4;
 // @lc code=start
 
 public class Solution

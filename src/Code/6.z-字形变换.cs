@@ -46,7 +46,7 @@
  * T     S     G
  * 
  */
-
+namespace Namespace6z;
 // @lc code=start
 public class Solution
 {

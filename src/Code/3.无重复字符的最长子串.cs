@@ -38,7 +38,7 @@
  * 
  * 
  */
-
+namespace Namespace3;
 // @lc code=start
 public class Solution
 {

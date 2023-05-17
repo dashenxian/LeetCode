@@ -73,11 +73,11 @@
  * 
  * 
  */
-
+namespace Namespace1406;
 // @lc code=start
 public class Solution {
     public string StoneGameIII(int[] stoneValue) {
-
+        throw new NotImplementedException();
     }
 }
 // @lc code=end

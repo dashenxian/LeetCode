@@ -53,7 +53,7 @@
  * 
  * 
  */
-
+namespace Namespace509;
 // @lc code=start
 public class Solution
 {

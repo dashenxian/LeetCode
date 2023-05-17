@@ -45,11 +45,11 @@
  * 
  * 
  */
-
+namespace Namespace1140;
 // @lc code=start
 public class Solution {
     public int StoneGameII(int[] piles) {
-
+        throw new NotImplementedException();
     }
 }
 // @lc code=end

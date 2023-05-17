@@ -29,7 +29,7 @@
  * ]
  * 
  */
-
+namespace Namespace46;
 // @lc code=start
 public class Solution {
    private IList<IList<int>> res = new List<IList<int>>();

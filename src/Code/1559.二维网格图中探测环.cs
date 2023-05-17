@@ -3,14 +3,12 @@
  *
  * [1559] 二维网格图中探测环
  */
+namespace Namespace1159;
 
 // @lc code=start
 
 #region 原方法
-
-namespace MyNamespace1159;
-
-public class Solution
+public partial class Solution
 {
     public bool ContainsCycle(char[][] grid)
     {
@@ -19,71 +17,27 @@ public class Solution
         UnionFind uf = new UnionFind(n * m);
         for (int i = 0; i < n; i++)
         {
-            int u = grid[i][0], v = grid[i][1];
-            if (uf.Find(u) == uf.Find(v))
+            for (int j = 0; j < m; j++)
             {
-                return true;
+                if (i > 0 && grid[i][j] == grid[i - 1][j])
+                {
+                    if (!uf.FindAndUnion(i * m + j, (i - 1) * m + j))
+                    {
+                        return true;
+                    }
+                }
+
+                if (j > 0 && grid[i][j] == grid[i][j - 1])
+                {
+                    if (!uf.FindAndUnion(i * m + j, i * m + j - 1))
+                    {
+                        return true;
+                    }
+                }
             }
-            uf.Union(u, v);
         }
         return false;
 
-    }
-
-    class UnionFind
-    {
-        private List<int> Parent { get; set; }
-        private List<int> Rank { get; set; }
-        public UnionFind(int count)
-        {
-            Parent = new List<int>(count);
-            Rank = new List<int>(count);
-            for (int i = 0; i < count; i++)
-            {
-                Parent.Add(i);
-                Rank.Add(1);
-            }
-        }
-
-        public int Find(int x)
-        {
-            if (Parent[x] == x)
-            {
-                return x;
-            }
-            return Parent[x] = Find(Parent[x]);
-        }
-        public void Union(int x, int y)
-        {
-            int fx = Find(x);
-            int fy = Find(y);
-            if (fx == fy) { return; }
-            if (Rank[fx] < Rank[fy]) { Parent[fy] = fx; }
-            else
-            {
-                if (Rank[fx] == Rank[fy]) { Rank[fy]++; }
-                Parent[fx] = fy;
-            }
-        }
-        public bool IsSame(int x, int y)
-        {
-            return Find(x) == Find(y);
-        }
-
-        public bool FindAndUnion(int x, int y)
-        {
-            int fx = Find(x);
-            int fy = Find(y);
-            if (fx != fy)
-            {
-                Union(fx, fx); return true;
-            }
-            return true;
-        }
-        public override string ToString()
-        {
-            return string.Join(',', Parent);
-        }
     }
 }
 #endregion
