@@ -12,6 +12,7 @@ public class Solution
 {
     public string ConvertToTitle(int columnNumber)
     {
+        //10进制数转26进制
         const int baseNumber = 26;
         const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 

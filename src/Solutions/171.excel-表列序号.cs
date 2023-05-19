@@ -10,6 +10,7 @@ public class Solution
 {
     public int TitleToNumber(string columnTitle)
     {
+        //26进制数转10进制
         var dic = new Dictionary<char, int>()
         {
             { 'A', 1 },
